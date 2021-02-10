@@ -17,27 +17,30 @@
     
 </head>
 <body>
-<nav class="navbar navbar-light bg-white pt-0 pb-0 shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="text-2xl font-bold">Photo Gallery</div>
+<div id="app">
+<nav class="navbar-light bg-white pt-0 pb-0 shadow-sm ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+        <div class="container-fluid ">
+          <div class="collapse navbar-collapse flex justify-center" id="navbarNav">
+            <div class="text-2xl font-bold ">Photo Gallery ({{countPhoto}})</div>
           </div>
         </div>
     </nav> 
 </nav>
-    <div id="app" class="flex justify-center">
-        
-        <div v-for="(cat,index) in cats" class=" card-body flex">
-            <div class="card" style="width: 18rem;">
-                <div class="m-4">
-                    <img v-bind:src="profile" class="rounded-circle" width="35">{{cat.ig}}
-                    <img :src="cat.image" class="card-img w-60"/>  
-                <i v-on:click="clickLike(index)" class="material-icons" :class="{like: cat.like}">favorite_border</i>
+    <div class="flex justify-center gap-12 pt-7">
+        <div v-for="(cat,index) in cats">
+            <div class="card w-72 py-2">
+                <div class="pl-3">
+                    <img :src="cat.profile" class="rounded-circle inline-block mr-2" width="35">{{cat.ig}}
                 </div>
+                    <img :src="cat.image" class="flex py-2"/> 
+                <div class="pl-3">
+                    <button v-on:click="clickLike(index)" class="material-icons" :class="{like: cat.like}">favorite</button>{{countLike}}
+                </div> 
             </div>  
         </div>
     </div>
+</div>
     <script src="./main.js"></script>  
 </body>
 </html>
