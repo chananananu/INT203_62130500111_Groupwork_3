@@ -29,14 +29,17 @@
 </nav>
     <div class="flex justify-center gap-12 pt-7">
         <div v-for="(cat,index) in cats">
-            <div class="card w-72 py-2">
+            <div class="card w-72 py-2 shadow-lg">
                 <div class="pl-3">
                     <img :src="cat.profile" class="rounded-circle inline-block mr-2" width="35">{{cat.ig}}
                 </div>
-                    <img :src="cat.image" class="flex py-2"/> 
+                <div v-on:click="clickLike(index)" :class="{like: cat.like}">
+                <i class="material-icons absolute pt-28 px-24 z-10" v-show="cat.like" style="font-size: 110px;" >favorite</i>
+                    <img :src="cat.image" class="relative flex py-2 z-0"/>
                 <div class="pl-3">
-                    <button v-on:click="clickLike(index)" class="material-icons" :class="{like: cat.like}">favorite</button>{{countLike}}
-                </div> 
+                    <button class="material-icons invisible">favorite</button>
+                </div>
+                </div>
             </div>  
         </div>
     </div>

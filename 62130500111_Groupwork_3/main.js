@@ -16,7 +16,7 @@ const app = {
     computed: {
         countPhoto() {
             return this.cats.length
-        }
+        }    
     }
 }
 

@@ -1,4 +1,8 @@
 .like {
     color: red;
-    
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    transition-duration: 300ms;
 }
