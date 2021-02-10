@@ -4,7 +4,8 @@ const app = {
             cats: [{image: 'image/01.jpg', ig: 'zjiasally (Fan Account)', like: false},
                     {image: 'image/02.jpg', ig: 'dear.mycats', like: false},
                     {image: 'image/03.jpg', ig: 'zuzu_and_nala', like: false}
-            ]
+            ],
+            profile: 'image/ig01.jpg'
         }
     },
     methods: {
